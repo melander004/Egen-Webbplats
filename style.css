@@ -1,11 +1,7 @@
 body{
-    /*
-    background-color:#121212;
-    color: white;
-    */
     display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: 1fr 1fr ;
     grid-template-areas: 
     "header header"
     "nav nav"
@@ -13,28 +9,65 @@ body{
     "footer footer";
 }
 
+/*Egenskaper för header*/
 header{
     grid-area: header;
     background-color: lightblue;
+    text-align: center;
+    font-size: 2em;
 }
 
+/*Egenskaper för nav*/
 nav{
     grid-area: nav;
     background-color: lightgreen;
-
 }
 
+nav ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0;
+    margin: 0;    
+
+    background-color:dimgray;
+}
+
+nav li{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+/*Egenskaper för main*/
 main{
     grid-area: main;
     background-color: lightpink;
 }
 
+/*Egenskaper för aside*/
 aside{
     grid-area: aside;
     background-color: lightgray;
 }
 
+aside a{
+    text-align: center;
+}
+
+/*Egenskaper för footer*/
 footer{
     grid-area: footer;
     background-color: lightcoral;
+    text-align: right;
+    font-weight: bold;
+}
+
+/*Egenskaper för h1*/
+h1{
+    font-family: Arial;
 }
