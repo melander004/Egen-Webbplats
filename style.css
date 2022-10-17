@@ -9,12 +9,35 @@ body{
     "footer footer";
 }
 
+#filmer{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer"
+}
+
+#spel{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer"
+}
+
 /*Egenskaper för header*/
 header{
     grid-area: header;
     background-color: lightblue;
     text-align: center;
     font-size: 2em;
+}
+
+/*Egenskaper för h1*/
+header h1{
+    font-family: Arial;
 }
 
 /*Egenskaper för nav*/
@@ -49,6 +72,40 @@ main{
     background-color: lightpink;
 }
 
+#filmer main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*Centrerar bilderna*/
+#filmer img{
+    display: block;
+    margin: 0 auto;
+}
+
+/**/
+#filmer h2{
+    text-align: center;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.center{
+    margin: auto;
+}
+
+th{
+    background-color: #afafaf;
+}
+
+tr:nth-child(even){
+    background-color: lightgray;
+}
+
 /*Egenskaper för aside*/
 aside{
     grid-area: aside;
@@ -67,7 +124,3 @@ footer{
     font-weight: bold;
 }
 
-/*Egenskaper för h1*/
-h1{
-    font-family: Arial;
-}
