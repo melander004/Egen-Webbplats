@@ -1,33 +1,16 @@
+/*Skapar en grid som har 4 rader och två kolumner som innehåller header, nav, main och en footer.*/
 body{
     display: grid;
     grid-template-rows: repeat(4, auto);
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr;
     grid-template-areas: 
-    "header header"
-    "nav nav"
-    "main aside"
-    "footer footer";
-}
-
-#filmer{
-    grid-template-columns: 1fr;
-    grid-template-areas:
     "header"
     "nav"
     "main"
-    "footer"
+    "footer";
 }
 
-#spel{
-    grid-template-columns: 1fr;
-    grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer"
-}
-
-/*Egenskaper för header*/
+/*Sätter header till grid-area header, justerar bakgrundsfärgen till ljusblå, centrerar texten och dubblar textens storlek.*/
 header{
     grid-area: header;
     background-color: lightblue;
@@ -35,19 +18,19 @@ header{
     font-size: 2em;
 }
 
-/*Egenskaper för h1*/
+/*Ändrar h1-taggen i header till fonten Arial.*/
 header h1{
     font-family: Arial;
 }
 
-/*Egenskaper för nav*/
+/*Sätter nav till grid-arean nav och ändrar bakgrundsfärgen till ljusgrön.*/
 nav{
     grid-area: nav;
     background-color: lightgreen;
 }
 
+/*Skapar en grid med 3 kolumner utan padding och margin, bakgrundsfärgen är en ganska mörk nyans av grå.*/
 nav ul{
-    list-style-type: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0;
@@ -56,44 +39,57 @@ nav ul{
     background-color:dimgray;
 }
 
+/*Tar bort punkterna, centerar texten och ökar storleken med 1,5*/
 nav li{
+    list-style-type: none;
     text-align: center;
     font-size: 1.5em;
 }
 
+/*Tar bort understrecken från länkarna och ändrar färgen till vit.*/
 nav a{
     text-decoration: none;
     color: white;
 }
 
-/*Egenskaper för main*/
+/*Sätter main till grid-arean main och ändrar bakgrundsfärgen till ljusrosa.*/
 main{
     grid-area: main;
     background-color: lightpink;
 }
 
-#filmer main{
+/*Centrerar och ändrar font till Arial på alla textstycken i main.*/
+main p{
+    text-align: center;
+    font-family: Arial;
+}
+
+/*Skapar en grid med 2 kolumner till klassen "filmer".*/
+.filmer{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-/*Centrerar bilderna*/
-#filmer img{
+/*Skapar ett block för img under id:t filmer_spel som centreras, därmed centreras bilderna. Dessutom har bilderna 50% bredd.*/
+main img{
     display: block;
     margin: 0 auto;
+    width: 50%;
 }
 
-/**/
-#filmer h2{
+/*Centrerar filmtitlarna över bilderna*/
+main h2{
     text-align: center;
 }
 
+/*Skapar en svart ram till tabellen och centrerar all text*/
 table, th, td{
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
 }
 
+/*Klass som används för att centrera tabellen i spel.html*/
 .center{
     margin: auto;
 }
@@ -102,21 +98,12 @@ th{
     background-color: #afafaf;
 }
 
+/*Används för zebra striping*/
 tr:nth-child(even){
     background-color: lightgray;
 }
 
-/*Egenskaper för aside*/
-aside{
-    grid-area: aside;
-    background-color: lightgray;
-}
-
-aside a{
-    text-align: center;
-}
-
-/*Egenskaper för footer*/
+/*Sätter footer till grid-arean footer, ändrar bakgrundsfärgen till ljuskorall, texten är högerjusterad och i fetstil.*/
 footer{
     grid-area: footer;
     background-color: lightcoral;
